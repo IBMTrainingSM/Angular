@@ -1,0 +1,17 @@
+table{
+ border-collapse:collpase;
+ width:100%;
+ border:1px solid black;
+
+}
+th,td{
+
+  text-align:left;
+  padding:8px;
+
+}
+tr:nth-child(odd)
+{
+
+  background-color: gray;
+}
