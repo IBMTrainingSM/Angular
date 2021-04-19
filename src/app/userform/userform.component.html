@@ -7,10 +7,10 @@
   <thead><td>FirstName</td> <td>Age</td>  <td>DOB</td></thead>
 
 <tbody>
-  <tr *ngFor='let user1 of userArray'>
+  <tr *ngFor='let user1 of userArray; index as i'>
     <td>{{user.name}}</td>
     <td>{{user.age}}</td>
-    <td>{{user.dob}}</td>
+    <td>{{user.dob}}</td><td><button (click)='this.deleteUser(user1.id, i)'>X</button></td>
   </tr>
 </tbody>
 </table>

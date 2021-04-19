@@ -13,6 +13,10 @@ export class UserformComponent implements OnInit {  //controller
   user:User=new User(); //model -stores all form data
   userArray:any;
   constructor(private userService:UserService) { }
+  deleteUser(id:number, index:number){
+    const observable = this.userService.delete(id);
+    observable.subscribe(response=> this.userArray.splice(index,1))
+  }
   save(){
     const observable = this.userService.save(this.user);
     observable.subscribe(response=> {
