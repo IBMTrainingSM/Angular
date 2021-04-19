@@ -4,12 +4,13 @@
 <input type="date" [(ngModel)]='user.dob'>
 <button (click)='save()'>Save</button>
 <table>
-  <thead><td>FirstName</td> <td>Age</td></thead>
+  <thead><td>FirstName</td> <td>Age</td>  <td>DOB</td></thead>
 
 <tbody>
   <tr *ngFor='let user1 of userArray'>
     <td>{{user.name}}</td>
     <td>{{user.age}}</td>
+    <td>{{user.dob}}</td>
   </tr>
 </tbody>
 </table>

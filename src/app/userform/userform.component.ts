@@ -11,11 +11,11 @@ import { UserService } from '../user-service';
 export class UserformComponent implements OnInit {  //controller
   title:string = 'Userform';
   user:User=new User(); //model -stores all form data
-  userArray:User[]=[];
+  userArray:any;
   constructor(private userService:UserService) { }
   save(){
-    const promise = this.userService.save(this.user);
-    promise.subscribe(response=> {
+    const observable = this.userService.save(this.user);
+    observable.subscribe(response=> {
       console.log(response);
       alert('user added..')
       this.userArray.push(Object.assign({}, this.user));
@@ -28,5 +28,11 @@ export class UserformComponent implements OnInit {  //controller
 
   }
   ngOnInit(): void {
+    const observable=this.userService.getAllUser();
+    observable.subscribe(response=>{
+      console.log(response);
+      this.userArray=response})
+
   }
+
 }
